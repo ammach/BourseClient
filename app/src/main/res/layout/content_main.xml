@@ -37,9 +37,11 @@
     </LinearLayout>
 
     <Button
+        android:id="@+id/entrer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="entrer"
+        android:onClick="entrer"
         android:layout_gravity="center"
         android:gravity="center"/>
 </LinearLayout>

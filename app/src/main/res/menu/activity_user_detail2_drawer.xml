@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/action"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="valeurs d'action" />
+        <item
+            android:id="@+id/mes_actions"
+            android:icon="@drawable/ic_menu_share"
+            android:title="mes actions" />
+        <item
+            android:id="@+id/profil"
+            android:icon="@drawable/ic_menu_send"
+            android:title="profil" />
+    </group>
+
+
+</menu>
