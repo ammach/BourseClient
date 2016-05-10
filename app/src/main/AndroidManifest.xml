@@ -50,7 +50,11 @@
             android:label="Mon Profil"
             android:parentActivityName=".UserDetailActivity"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailActionActivity"></activity>
+        <activity
+            android:name=".DetailActionActivity"
+            android:parentActivityName=".ActionsActivity" />
+        <activity android:name=".AddActionActivity" />
+        <activity android:name=".ActionsAdminActivity"></activity>
     </application>
 
 </manifest>

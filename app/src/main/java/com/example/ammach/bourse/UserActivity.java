@@ -24,7 +24,7 @@ public class UserActivity extends AppCompatActivity {
             String pass =params[1];
             Client c=new Client(name,pass);
             ClientConnecte client=new ClientConnecte();
-            client.connexion("192.168.1.6", 40000);
+            client.connexion("192.168.1.5", 40000);
             client.envoiObject(c);
             return null;
         }

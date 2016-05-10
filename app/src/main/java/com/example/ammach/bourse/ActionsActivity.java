@@ -28,6 +28,7 @@ public class ActionsActivity extends AppCompatActivity implements AdapterView.On
         Intent intent=new Intent(this,DetailActionActivity.class);
         intent.putExtra("nameAction",actions.get(position).getNom());
         intent.putExtra("valAction",actions.get(position).getValeur());
+        intent.putExtra("position",position);
         startActivity(intent);
     }
 
