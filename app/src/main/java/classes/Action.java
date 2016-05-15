@@ -1,9 +1,13 @@
 package classes;
 
+import java.io.Serializable;
+
 /**
  * Created by ammach on 5/4/2016.
  */
-public class Action {
+public class Action implements Serializable {
+
+   // private static final long serialVersionUID = 354054054054L;
 
     String nom;
     String valeur;

@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Nom de l'action:"/>
     <EditText
+        android:id="@+id/editNomAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <TextView
@@ -24,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="Valeur de l'action:"/>
     <EditText
+        android:id="@+id/editValeurAction"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button

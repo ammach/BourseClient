@@ -32,18 +32,16 @@ public class ClientConnecte {
             dataInputStream.flush();
             dataInputStream.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
     }
-    public void envoiObject(Client data){
+    public void envoiObject(Object data){
         try {
             ObjectOutputStream objectOutputStream =new ObjectOutputStream(sock.getOutputStream());
             objectOutputStream.writeObject(data);
             objectOutputStream.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
