@@ -1,6 +1,11 @@
 # BourseClient
 
-CONFIGURATION :
+Configuration du Projet :
+     
+     * aller a UserActivity-->class Task -->methode doInBackground  et changer l'adresse IP.
+     
+--> pour le test :
+   il faut que le telephone et le serveur sont dans le meme reseau!!
 
 ![first](https://cloud.githubusercontent.com/assets/12902041/15179113/c5b18240-1771-11e6-93af-be4fa724f37d.png)
 
