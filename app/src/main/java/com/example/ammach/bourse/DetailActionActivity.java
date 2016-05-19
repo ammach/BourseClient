@@ -48,22 +48,18 @@ public class DetailActionActivity extends AppCompatActivity  {
         chart = (LineChartView) findViewById(R.id.chart);
         previewChart = (PreviewLineChartView) findViewById(R.id.chart_preview);
 
-        // Generate data for previewed chart and copy of that data for preview chart.
-       // generateDefaultData();
+
         final List<PointValue> values = new ArrayList<PointValue>();
         lines = new ArrayList<Line>();
         data = new LineChartData(lines);
         data.setAxisXBottom(new Axis().setName("temps(1000ms)"));
         data.setAxisYLeft(new Axis().setHasLines(true).setName("valeur(%)"));
 
-        // prepare preview data, is better to use separate deep copy for preview chart.
-        // Set color to grey to make preview area more visible.
+
         previewData = new LineChartData(data);
-//        previewData.getLines().get(0).setColor(ChartUtils.DEFAULT_DARKEN_COLOR);
-        //
+
         chart.setLineChartData(data);
-        // Disable zoom/scroll for previewed chart, visible chart ranges depends on preview chart viewport so
-        // zoom/scroll is unnecessary.
+
         chart.setZoomEnabled(false);
         chart.setScrollEnabled(false);
 
@@ -72,8 +68,11 @@ public class DetailActionActivity extends AppCompatActivity  {
 
         previewX(false);
 
+        //ecoute de reponse du serveur liste des valeurs des actions
         new ServeurDetailAction();
 
+
+        //attente de la liste des actions pour l'afficher sur le graphe
         handler=new Handler(){
             int i=0;
             @Override
@@ -122,9 +121,7 @@ public class DetailActionActivity extends AppCompatActivity  {
         previewChart.setZoomType(ZoomType.VERTICAL);
     }
     private void previewXY() {
-        // Better to not modify viewport of any chart directly so create a copy.
         Viewport tempViewport = new Viewport(chart.getMaximumViewport());
-        // Make temp viewport smaller.
         float dx = tempViewport.width() / 4;
         float dy = tempViewport.height() / 4;
         tempViewport.inset(dx, dy);
@@ -136,7 +133,6 @@ public class DetailActionActivity extends AppCompatActivity  {
 
         @Override
         public void onViewportChanged(Viewport newViewport) {
-            // don't use animation, it is unnecessary when using preview chart.
             chart.setCurrentViewport(newViewport);
         }
 

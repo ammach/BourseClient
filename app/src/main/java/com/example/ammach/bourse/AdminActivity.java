@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
 
-import helpers.ClientConnecte;
-
 public class AdminActivity extends AppCompatActivity {
     Switch mswitch;
     @Override
@@ -33,10 +31,7 @@ public class AdminActivity extends AppCompatActivity {
     public void valider(View view) {
         if(mswitch.isChecked())
         {
-            //startActivity(new Intent(AdminActivity.this,ActionsAdminActivity.class));
-            ClientConnecte client=new ClientConnecte();
-            client.connexion("192.168.1.6", 40000);
-            client.envoi("");
+            startActivity(new Intent(AdminActivity.this,ActionsAdminActivity.class));
         }
         else
         {

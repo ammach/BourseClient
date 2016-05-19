@@ -59,7 +59,7 @@ public class AddActionActivity extends AppCompatActivity {
             Toast.makeText(AddActionActivity.this,"veuillez remplir les données", Toast.LENGTH_SHORT).show();
           }
         else{
-            new Task().execute(nomAction,valeurAction);
+           // new Task().execute(nomAction,valeurAction);
         }
     }
 }

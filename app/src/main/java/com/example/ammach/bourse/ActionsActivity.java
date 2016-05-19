@@ -32,6 +32,9 @@ public class ActionsActivity extends AppCompatActivity implements AdapterView.On
         startActivity(intent);
     }
 
+    ///////////////////////////////////////////////////////////////////////////
+    // adapter de la liste des actions
+    ///////////////////////////////////////////////////////////////////////////
     class MyAdapter extends BaseAdapter {
 
         ArrayList<Action> actions;
@@ -102,6 +105,7 @@ public class ActionsActivity extends AppCompatActivity implements AdapterView.On
             }
         });
 
+        //ecoute de reponse du serveur liste des actions
         new ServeurAction();
         actions=new ArrayList<>();
         actions.add(new Action("MAZI","attente en cours..."));
@@ -111,6 +115,8 @@ public class ActionsActivity extends AppCompatActivity implements AdapterView.On
 
         listview=(ListView) findViewById(R.id.listview_actions);
         adapter=new MyAdapter(actions);
+
+        //attente de la liste des actions pour l'afficher
         handler=new Handler(){
             @Override
             public void handleMessage(Message msg) {

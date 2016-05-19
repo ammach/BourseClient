@@ -31,6 +31,10 @@ import helpers.ServeurChange;
 public class UserDetailActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+
+    ///////////////////////////////////////////////////////////////////////////
+    // adapter de la liste des changes
+    ///////////////////////////////////////////////////////////////////////////
     public  class MyAdapter extends BaseAdapter {
 
         ArrayList<Change> changes;
@@ -130,7 +134,7 @@ public class UserDetailActivity extends AppCompatActivity
         View header=navigationView.getHeaderView(0);
         username= (TextView) header.findViewById(R.id.username);
         username.setText(name);
-
+        //ecoute de reponse du serveur liste des changes
         new ServeurChange();
         changes=new ArrayList<Change>();
         changes.add(new Change("france","attente en cours..."));
@@ -140,6 +144,8 @@ public class UserDetailActivity extends AppCompatActivity
 
         adapter=new MyAdapter(changes);
         listview=(ListView) findViewById(R.id.listview);
+
+        //attente de la liste des changes pour l'afficher
         handler=new Handler(){
             @Override
             public void handleMessage(Message msg) {
